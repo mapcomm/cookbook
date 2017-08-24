@@ -1,0 +1,186 @@
+# js code to pull data using Carto API and render as a layer on leaflet map
+# currently not coexisting well with leaflet.js         
+
+
+          // add a base layer
+          // L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+          //   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+          // }).addTo(map);
+    
+
+        //           var map = L.map('map', { 
+        //     zoomControl: false,
+        //     scrollWheelZoom: false,
+        //     center: [0, 0],
+        //     
+        //     zoom: 3
+        //    });
+
+
+         
+        // //  add a base layer
+        //   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        //   }).addTo(map);
+
+          
+  
+       
+        // cartodb.createLayer(map, 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json')
+        //  .addTo(map)
+        //  .on('done', function(layer) {
+        //    // get sublayer 0 and set the infowindow template
+        //    var sublayer = layer.getSubLayer(0);
+        //    sublayer.infowindow.set('template', $('#infowindow_template').html());
+        //   }).on('error', function() {
+        //     console.log("some error occurred");
+        //   });
+     
+
+// cartodb.createLayer(map, {
+//   user_name: 'hilld',
+//   type: 'cartodb',
+//   sublayers: [{
+//     sql: "SELECT * FROM 'mapcomm-admin'.permaculture_groups_gb_sct",
+//     //cartocss: '#table_name {marker-fill: #F0F0F0;}'
+//   }]
+// })
+// .addTo(map) // add the layer to our map which already contains 1 sublayer
+// .done(function(layer) {
+
+// alert(layer);
+//   // create and add a new sublayer
+//   // layer.createSubLayer({
+//   //   sql: "SELECT * FROM table_name limit 200",
+//   //   cartocss: '#table_name {marker-fill: #F0F0F0;}'
+//   // });
+
+//   // // change the query for the first layer
+//   // layer.getSubLayer(0).setSQL("SELECT * FROM table_name limit 10");
+// });
+
+
+
+
+
+
+         
+// function addL(){
+//              // add cartodb layer with one sublayer
+//           cartodb.createLayer(
+//             map, {
+//             user_name: 'andye',
+//             type: 'namedmap',
+//             named_map: {
+//               name: "webinar_namedmaps_sample",
+//               layers: [{
+//                   layer_name: "small_mass",
+//                   interactivity: "cartodb_id, mass"
+//                },
+//                {
+//                    layer_name: "medium_mass",
+//                    interactivity: "cartodb_id, mass"
+//                },
+//                {
+//                    layer_name: "large_mass",
+//                    interactivity: "cartodb_id, mass"
+//                }]
+//              }
+//             })
+//              .addTo(map)
+//  function createSelector(layer) {
+//               var layerchosen = "";
+//               var $options = $(".layer_selector").find("li");
+//               $options.click(function(e) {
+//                   var $li = $(e.target);
+//                   var selected = +$li.attr('data');
+
+//                   $options.removeClass('selected');
+//                   $li.addClass('selected');
+
+//                   if (selected !== -1) {
+//                       for (var i = 0; i < layer.getSubLayerCount(); i++) {
+//                           if (i !== selected) {
+//                               layer.getSubLayer(i).hide();
+//                           } else {
+//                               layer.getSubLayer(i).show();
+//                           }
+//                       }
+//                   } else {
+//                       for (var i = 0; i < layer.getSubLayerCount(); i++) {
+//                           layer.getSubLayer(i).show();
+//                       }
+//                   }
+//               });
+//           }
+
+//           // add cartodb layer with one sublayer
+//           cartodb.createLayer(map, {
+//             user_name: 'andye',
+//             type: 'namedmap',
+//             named_map: {
+//               name: "webinar_namedmaps_sample",
+//               layers: [{
+//                   layer_name: "small_mass",
+//                   interactivity: "cartodb_id, mass"
+//                },
+//                {
+//                    layer_name: "medium_mass",
+//                    interactivity: "cartodb_id, mass"
+//                },
+//                {
+//                    layer_name: "large_mass",
+//                    interactivity: "cartodb_id, mass"
+//                }]
+//              }
+//             })
+//             .addTo(map)
+//             .done(function(layer) {
+//                 // for all layers...
+//                 for (var i = 0; i < layer.getSubLayerCount(); ++i ) {
+//                     // turn on interaction
+//                     layer.getSubLayer(i).setInteraction(true);
+
+//                     // show infowindows on click
+//                     cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(i), ['mass']);
+
+//                     // show data in console on mouseover
+//                     layer.getSubLayer(0).on('featureOver', function(e, pos, pixel, data) {
+//                       // print data to console log
+//                       console.log("Event #" + data.cartodb_id + ", mass " + data.mass);
+//                     });
+//                 }
+                
+//                 createSelector(layer);
+//             });
+    
+//     }
+//     addL();
+
+
+
+
+         
+
+         
+
+
+                                          
+            //removed!
+        //basemap.addTo(map);
+
+
+        // var map = L.map('map', { 
+        //     zoomControl: false,
+        //     scrollWheelZoom: false,
+        //     center: [0, 0],
+        //     zoomControl: true,
+        //     zoom: 3
+        //    });
+
+        //   // add a base layer
+        //   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        //   }).addTo(map);
+
+
