@@ -15,3 +15,9 @@ osmium tags-filter california.osh.pbf \
 	building=church,cathedral,chapel,mosque,synagogue,temple \
 	amenity=place_of_worship denomination=* religion=* name=*church* \
 	 -o california_pow.osh.pbf
+	 
+# To convert to geojson (using GDAL):
+# ...but don't forget to get GDAL if you don't already have it:
+# brew install gdal
+
+ogr2ogr -f GeoJSON california_pow.geojson california_pow.osh.pbf
